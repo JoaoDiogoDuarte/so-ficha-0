@@ -1,3 +1,47 @@
+## Table of contents
+
+- [Navigation](#navigation)
+  * [Paths](#paths)
+  * [Globs](#globs)
+  * [pwd](#pwd)
+  * [cd](#cd)
+  * [tree](#tree)
+- [Creation and deletion](#creation-and-deletion)
+  * [touch](#touch)
+  * [mkdir](#mkdir)
+  * [rmdir](#rmdir)
+  * [rm](#rm)
+- [Copying and moving](#copying-and-moving)
+  * [cp](#cp)
+  * [mv](#mv)
+- [File manipulation](#file-manipulation)
+  * [cat](#cat)
+  * [more](#more)
+  * [less](#less)
+  * [head](#head)
+  * [tail](#tail)
+  * [chmod](#chmod)
+  * [file](#file)
+- [Process manipulation](#process-manipulation)
+  * [I/O redirections](#io-redirections)
+  * [ps](#ps)
+  * [kill](#kill)
+- [File searching](#file-searching)
+  * [find](#find)
+  * [wc](#wc)
+  * [ls](#ls)
+- [Finding commands and manuals](#finding-commands-and-manuals)
+  * [which](#which)
+  * [man](#man)
+- [Information in file](#information-in-file)
+  * [grep](#grep)
+  * [cut](#cut)
+  * [sort](#sort)
+- [File editing](#file-editing)
+  * [sed](#sed)
+- [Archiving](#archiving)
+  * [tar](#tar)
+  * [zip](#zip)
 
 ## Navigation
 
@@ -674,13 +718,13 @@ main.tex: LaTeX 2e document, Unicode text, UTF-8 text, with very long lines (460
 ## Process manipulation
 
 
-## I/O redirections
+### I/O redirections
 
 Firstly, you have three streams: standard in (stdin or 0), standard out (stdout or 1) and standard error (stderror or 2).
 
 When we say redirection, it means that instead of printing any of the streams to the terminal, they are redirected somewhere else, such as a file.
 
-### > and >>
+#### > and >>
 
 This will send the result of executing the leftmost command's standard output to some file, even if it has to overwrite it. We can also write `1>` and `1>>` but this is not common.
 
@@ -718,7 +762,7 @@ c
 d
 ```
 
-### < and <<
+#### < and <<
 
 When we feed an input to a program, the program reads from the standard input, which is normally the keyboard. However, we can also feed a file into standard input.
 
@@ -739,7 +783,7 @@ b
 c
 ```
 
-### 2> and 2>>
+#### 2> and 2>>
 
 This redirects and error messages to a file. For example, from a non-root user, we cannot `ls` the directory `/root`.
 
@@ -756,7 +800,7 @@ user:~$ cat error.log
 ls: cannot open directory '/root': Permission denied
 ```
 
-### Some operations using redirects
+#### Some operations using redirects
 
 We can redirect both the standard out and standard error to the same file.
 
@@ -784,7 +828,7 @@ ls: cannot open directory '/root': Permission denied
 
 The symbols `&>>` work as expected.
 
-### Pipes |
+#### Pipes |
 
 Pipes are essential in any Unix-like system as it allows us to chain together programs by redirecting their standard output.
 
@@ -798,7 +842,7 @@ b
 c
 ```
 
-### &
+#### &
 
 A bit of a side note, but `&` will run whatever program is on its left in the background (still tied to the terminal, so if you shut off the terminal, the process dies). Hence, it is still connected to the terminal session you are currently running.
 
